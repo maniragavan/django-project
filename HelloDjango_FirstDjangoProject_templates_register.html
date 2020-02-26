@@ -1,0 +1,32 @@
+{% extends 'login.html' %}
+
+{% block content %}
+<h2>Register User</h2>
+    <form action='register' method="POST">
+        {% csrf_token %}
+        <div class="container">
+            <label ><b>FirstName</b></label>
+            <input type="text" placeholder="Enter Firstname" name="firstname" required>
+
+            <label ><b>Username</b></label>
+            <input type="text" placeholder="Enter Lastname" name="lastname" required>
+
+            <label ><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+        
+            <label ><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <label ><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" required>
+                
+            <button type="submit">Register</button>
+           
+        </div>       
+    </form>
+    <div>
+        {% for message in messages%}
+            <h2>{{message}}</h2>
+        {% endfor%}
+    </div>
+{% endblock %}
